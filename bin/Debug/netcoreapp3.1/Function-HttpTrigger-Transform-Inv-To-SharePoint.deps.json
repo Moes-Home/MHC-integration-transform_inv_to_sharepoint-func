@@ -6,14 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Function-HttpTrigger-Transform-SAP-To-SPS/1.0.0": {
+      "Function-HttpTrigger-Transform-Inv-To-SharePoint/1.0.0": {
         "dependencies": {
           "Microsoft.Azure.Cosmos": "3.21.0",
           "Microsoft.Azure.Functions.Analyzers": "1.0.0",
           "Microsoft.NET.Sdk.Functions": "3.0.13"
         },
         "runtime": {
-          "Function-HttpTrigger-Transform-SAP-To-SPS.dll": {}
+          "Function-HttpTrigger-Transform-Inv-To-SharePoint.dll": {}
         }
       },
       "Azure.Core/1.3.0": {
@@ -1573,7 +1573,7 @@
     }
   },
   "libraries": {
-    "Function-HttpTrigger-Transform-SAP-To-SPS/1.0.0": {
+    "Function-HttpTrigger-Transform-Inv-To-SharePoint/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -6,6 +6,8 @@ namespace MHC.Function
     {
         public string CardCode { get; set; }   
         public string DeliveryMode { get; set; }
-        public string InventoryContent { get; set; }
+        public object InventoryContent { get; set; }
+        public string partnerName { get; set; }
+        public string deliveryMode { get; set; }
     }
 }

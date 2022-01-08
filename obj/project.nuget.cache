@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HYL4uCfQYavKiQFT3xxm9+DbvyEXhlOTe9zZm4TbmM49ddMKhj87kYIDSCqq0ZbDLrMZwZsP81PjDyk2CuSP3g==",
+  "dgSpecHash": "Jk5+iOTtypJgtfnkFyV5a8qDv81uUEvARoOvvhXqW3Mx5+pv43qZKYUEoSFFWvzjC8eVdPKhgIM1Ukqzwk6fWQ==",
   "success": true,
-  "projectFilePath": "C:\\Drive D\\MoesSource\\MHC-integration-subscription-to-sps-func\\MHC-integration-subscription-to-sps-func\\Function-HttpTrigger-Transform-SAP-To-SPS.csproj",
+  "projectFilePath": "C:\\Drive D\\MoesSource\\MHC-integration-inv-to-sharepoint-transform-func\\MHC-integration-transform_inv_to_sharepoint-func\\Function-HttpTrigger-Transform-Inv-To-SharePoint.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\javad\\.nuget\\packages\\azure.core\\1.3.0\\azure.core.1.3.0.nupkg.sha512",
     "C:\\Users\\javad\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.4\\microsoft.aspnet.webapi.client.5.2.4.nupkg.sha512",

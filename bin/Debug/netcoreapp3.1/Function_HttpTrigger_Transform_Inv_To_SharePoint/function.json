@@ -13,6 +13,6 @@
     }
   ],
   "disabled": false,
-  "scriptFile": "../bin/Function-HttpTrigger-Transform-SAP-To-SPS.dll",
-  "entryPoint": "MHC.Function.Function_HttpTrigger_Transform_SAP_To_SPS.Run"
+  "scriptFile": "../bin/Function-HttpTrigger-Transform-Inv-To-SharePoint.dll",
+  "entryPoint": "MHC.Function.Function_HttpTrigger_Transform_Inv_To_SharePoint.Run"
 }

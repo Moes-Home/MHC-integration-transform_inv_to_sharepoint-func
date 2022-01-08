@@ -35,7 +35,7 @@ namespace MHC.Function
 
                 if(inventoryInputObject.CardCode =="CUS002194")
                 {
-                    LineItem lineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent);
+                    LineItem lineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
                     sharePointResultObject.SKU= lineItem.InventoryLine.VendorPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
                     sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations[0].TotalQty;
@@ -43,10 +43,11 @@ namespace MHC.Function
                     sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
                     sharePointResultObject.PartnerName = "SPS(LULU & GEORGIA INC)";
                     sharePointResultObject.Warehouse = "";
+                    sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
                 }
                 else if(inventoryInputObject.CardCode =="CCAN000289")
                 {
-                    InventoryUpdate inventoryUpdate =  JsonConvert.DeserializeObject<InventoryUpdate>(inventoryInputObject.InventoryContent);
+                    InventoryUpdate inventoryUpdate =  JsonConvert.DeserializeObject<InventoryUpdate>(inventoryInputObject.InventoryContent.ToString());
                     sharePointResultObject.SKU = inventoryUpdate.supplierPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
                     sharePointResultObject.Atp = inventoryUpdate.quantityOnHand;
@@ -54,10 +55,11 @@ namespace MHC.Function
                     sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
                     sharePointResultObject.PartnerName = "Wayfair Canada";
                     sharePointResultObject.Warehouse = inventoryUpdate.supplierId;
+                    sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                 }
                 else if(inventoryInputObject.CardCode =="CUS003640")
                 {
-                    InventoryUpdate inventoryUpdate =  JsonConvert.DeserializeObject<InventoryUpdate>(inventoryInputObject.InventoryContent);
+                    InventoryUpdate inventoryUpdate =  JsonConvert.DeserializeObject<InventoryUpdate>(inventoryInputObject.InventoryContent.ToString());
                     sharePointResultObject.SKU = inventoryUpdate.supplierPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
                     sharePointResultObject.Atp = inventoryUpdate.quantityOnHand;
@@ -66,6 +68,7 @@ namespace MHC.Function
                     sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
                     sharePointResultObject.PartnerName = "Wayfair US";
                     sharePointResultObject.Warehouse = inventoryUpdate.supplierId;
+                    sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                 }
 
 

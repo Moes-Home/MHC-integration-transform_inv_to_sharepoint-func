@@ -1,0 +1,74 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Drive D\\MoesSource\\MHC-integration-inv-to-sharepoint-transform-func\\MHC-integration-transform_inv_to_sharepoint-func\\Function-HttpTrigger-Transform-Inv-To-SharePoint.csproj": {}
+  },
+  "projects": {
+    "C:\\Drive D\\MoesSource\\MHC-integration-inv-to-sharepoint-transform-func\\MHC-integration-transform_inv_to_sharepoint-func\\Function-HttpTrigger-Transform-Inv-To-SharePoint.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Drive D\\MoesSource\\MHC-integration-inv-to-sharepoint-transform-func\\MHC-integration-transform_inv_to_sharepoint-func\\Function-HttpTrigger-Transform-Inv-To-SharePoint.csproj",
+        "projectName": "Function-HttpTrigger-Transform-Inv-To-SharePoint",
+        "projectPath": "C:\\Drive D\\MoesSource\\MHC-integration-inv-to-sharepoint-transform-func\\MHC-integration-transform_inv_to_sharepoint-func\\Function-HttpTrigger-Transform-Inv-To-SharePoint.csproj",
+        "packagesPath": "C:\\Users\\javad\\.nuget\\packages\\",
+        "outputPath": "C:\\Drive D\\MoesSource\\MHC-integration-inv-to-sharepoint-transform-func\\MHC-integration-transform_inv_to_sharepoint-func\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\javad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Azure.Cosmos": {
+              "target": "Package",
+              "version": "[3.21.0, )"
+            },
+            "Microsoft.Azure.Functions.Analyzers": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Microsoft.NET.Sdk.Functions": {
+              "target": "Package",
+              "version": "[3.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.412\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
