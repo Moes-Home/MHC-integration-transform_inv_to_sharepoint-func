@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Drive D\\MoesSource\\MHC-integration-inv-to-sharepoint-transform-func\\MHC-integration-transform_inv_to_sharepoint-func\\Function-HttpTrigger-Transform-Inv-To-SharePoint.csproj": {}
+    "C:\\DriveD\\MoesSource\\MHC-integration-inv-to-sharepoint-transform-func\\MHC-integration-transform_inv_to_sharepoint-func\\Function-HttpTrigger-Transform-Inv-To-SharePoint.csproj": {}
   },
   "projects": {
-    "C:\\Drive D\\MoesSource\\MHC-integration-inv-to-sharepoint-transform-func\\MHC-integration-transform_inv_to_sharepoint-func\\Function-HttpTrigger-Transform-Inv-To-SharePoint.csproj": {
+    "C:\\DriveD\\MoesSource\\MHC-integration-inv-to-sharepoint-transform-func\\MHC-integration-transform_inv_to_sharepoint-func\\Function-HttpTrigger-Transform-Inv-To-SharePoint.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Drive D\\MoesSource\\MHC-integration-inv-to-sharepoint-transform-func\\MHC-integration-transform_inv_to_sharepoint-func\\Function-HttpTrigger-Transform-Inv-To-SharePoint.csproj",
+        "projectUniqueName": "C:\\DriveD\\MoesSource\\MHC-integration-inv-to-sharepoint-transform-func\\MHC-integration-transform_inv_to_sharepoint-func\\Function-HttpTrigger-Transform-Inv-To-SharePoint.csproj",
         "projectName": "Function-HttpTrigger-Transform-Inv-To-SharePoint",
-        "projectPath": "C:\\Drive D\\MoesSource\\MHC-integration-inv-to-sharepoint-transform-func\\MHC-integration-transform_inv_to_sharepoint-func\\Function-HttpTrigger-Transform-Inv-To-SharePoint.csproj",
+        "projectPath": "C:\\DriveD\\MoesSource\\MHC-integration-inv-to-sharepoint-transform-func\\MHC-integration-transform_inv_to_sharepoint-func\\Function-HttpTrigger-Transform-Inv-To-SharePoint.csproj",
         "packagesPath": "C:\\Users\\javad\\.nuget\\packages\\",
-        "outputPath": "C:\\Drive D\\MoesSource\\MHC-integration-inv-to-sharepoint-transform-func\\MHC-integration-transform_inv_to_sharepoint-func\\obj\\",
+        "outputPath": "C:\\DriveD\\MoesSource\\MHC-integration-inv-to-sharepoint-transform-func\\MHC-integration-transform_inv_to_sharepoint-func\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\javad\\AppData\\Roaming\\NuGet\\NuGet.Config",

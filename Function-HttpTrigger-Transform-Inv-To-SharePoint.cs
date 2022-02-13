@@ -38,8 +38,10 @@ namespace MHC.Function
                     LineItem lineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
                     sharePointResultObject.SKU= lineItem.InventoryLine.VendorPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
-                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations[0].TotalQty;
-                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations[0].Dates.Date;
+                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.TotalQty??0;
+                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.Dates.Date;
+                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.TotalQty??0;;
+                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.Dates.Date;
                     sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
                     sharePointResultObject.PartnerName = "SPS(LULU & GEORGIA INC)";
                     sharePointResultObject.Warehouse = "";
