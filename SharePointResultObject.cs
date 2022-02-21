@@ -14,5 +14,6 @@ namespace MHC.Function
         public string DeliveryMode { get; set; }
         public string Warehouse { get; set; }
         public object Content { get; set; }
+        public string Status { get; set; }
     }
 }

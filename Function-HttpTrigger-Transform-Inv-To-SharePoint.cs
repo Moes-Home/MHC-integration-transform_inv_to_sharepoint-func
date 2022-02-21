@@ -46,6 +46,7 @@ namespace MHC.Function
                     sharePointResultObject.PartnerName = "SPS(LULU & GEORGIA INC)";
                     sharePointResultObject.Warehouse = "";
                     sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Status = inventoryInputObject.status;
                 }
                 else if(inventoryInputObject.CardCode =="CCAN000289")
                 {
@@ -58,6 +59,7 @@ namespace MHC.Function
                     sharePointResultObject.PartnerName = "Wayfair Canada";
                     sharePointResultObject.Warehouse = inventoryUpdate.supplierId;
                     sharePointResultObject.Content = inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Status = inventoryInputObject.status;
                 }
                 else if(inventoryInputObject.CardCode =="CUS003640")
                 {
@@ -71,6 +73,7 @@ namespace MHC.Function
                     sharePointResultObject.PartnerName = "Wayfair US";
                     sharePointResultObject.Warehouse = inventoryUpdate.supplierId;
                     sharePointResultObject.Content = inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Status = inventoryInputObject.status;
                 }
 
 

@@ -9,5 +9,6 @@ namespace MHC.Function
         public object InventoryContent { get; set; }
         public string partnerName { get; set; }
         public string deliveryMode { get; set; }
+        public string status { get; set; }
     }
 }
