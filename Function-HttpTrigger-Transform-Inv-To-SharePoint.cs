@@ -47,6 +47,7 @@ namespace MHC.Function
                     sharePointResultObject.Warehouse = "";
                     sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
+                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + lineItem.InventoryLine.VendorPartNumber;
                 }
                 else if(inventoryInputObject.CardCode =="CCAN000289")
                 {
@@ -60,6 +61,7 @@ namespace MHC.Function
                     sharePointResultObject.Warehouse = inventoryUpdate.supplierId;
                     sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
+                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + inventoryUpdate.supplierPartNumber +"_"+inventoryUpdate.supplierId;
                 }
                 else if(inventoryInputObject.CardCode =="CUS003640")
                 {
@@ -74,6 +76,7 @@ namespace MHC.Function
                     sharePointResultObject.Warehouse = inventoryUpdate.supplierId;
                     sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
+                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + inventoryUpdate.supplierPartNumber +"_"+inventoryUpdate.supplierId;
                 }
 
 

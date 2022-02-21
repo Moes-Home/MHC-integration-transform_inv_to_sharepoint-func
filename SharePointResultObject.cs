@@ -15,5 +15,6 @@ namespace MHC.Function
         public string Warehouse { get; set; }
         public object Content { get; set; }
         public string Status { get; set; }
+        public string FileName { get; set; }
     }
 }
