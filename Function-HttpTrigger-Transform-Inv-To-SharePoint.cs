@@ -7,6 +7,7 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using MHC.Function.SPS_Costco;
 using System.Collections.Generic;
 
 namespace MHC.Function
@@ -77,6 +78,22 @@ namespace MHC.Function
                     sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
                     sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + inventoryUpdate.supplierPartNumber +"_"+inventoryUpdate.supplierId;
+                }
+                else if(inventoryInputObject.CardCode =="CCAN000410")
+                {
+                    SPS_CostcoLineItem sps_CostcoLineItem =  JsonConvert.DeserializeObject<SPS_CostcoLineItem>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU= sps_CostcoLineItem.InventoryLine.VendorPartNumber;
+                    sharePointResultObject.CardCode = inventoryInputObject.CardCode;
+                    sharePointResultObject.Atp = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="61")?.TotalQty??0;
+                    sharePointResultObject.AtpDate = DateTime.Now.Date.ToString("dd/MM/yyyy");
+                    // sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.TotalQty??0;;
+                    // sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.Dates.Date;
+                    sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
+                    sharePointResultObject.PartnerName = "SPS(COSTCO HOME)";
+                    sharePointResultObject.Warehouse = "";
+                    sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Status = inventoryInputObject.status;
+                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + sps_CostcoLineItem.InventoryLine.VendorPartNumber;
                 }
 
 
