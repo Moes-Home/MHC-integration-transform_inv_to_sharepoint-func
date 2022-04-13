@@ -85,7 +85,7 @@ namespace MHC.Function
                     sharePointResultObject.SKU= sps_CostcoLineItem.InventoryLine.VendorPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
                     sharePointResultObject.Atp = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="61")?.TotalQty??0;
-                    sharePointResultObject.AtpDate = DateTime.Now.Date.ToString("dd/MM/yyyy");
+                    sharePointResultObject.AtpDate = DateTime.Now.Date.ToString();
                     // sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.TotalQty??0;;
                     // sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.Dates.Date;
                     sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
