@@ -127,6 +127,35 @@ namespace MHC.Function
                     sharePointResultObject.Status = inventoryInputObject.status;
                     sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + inventoryUpdate.supplierPartNumber +"_"+inventoryUpdate.supplierId;
                 }
+                else if(inventoryInputObject.CardCode =="CCAN000289-ATP")
+                {
+                    InventoryUpdate inventoryUpdate =  JsonConvert.DeserializeObject<InventoryUpdate>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU = inventoryUpdate.supplierPartNumber;
+                    sharePointResultObject.CardCode = inventoryInputObject.CardCode;
+                    sharePointResultObject.Atp = inventoryUpdate.quantityOnHand;
+                    sharePointResultObject.AtpDate = inventoryUpdate.itemNextAvailabilityDate;
+                    sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
+                    sharePointResultObject.PartnerName = "Wayfair Canada";
+                    sharePointResultObject.Warehouse = inventoryUpdate.supplierId;
+                    sharePointResultObject.Content = inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Status = inventoryInputObject.status;
+                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + inventoryUpdate.supplierPartNumber +"_"+inventoryUpdate.supplierId;
+                }
+                else if(inventoryInputObject.CardCode =="CUS003640-ATP")
+                {
+                    InventoryUpdate inventoryUpdate =  JsonConvert.DeserializeObject<InventoryUpdate>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU = inventoryUpdate.supplierPartNumber;
+                    sharePointResultObject.CardCode = inventoryInputObject.CardCode;
+                    sharePointResultObject.Atp = inventoryUpdate.quantityOnHand;
+                    sharePointResultObject.QuantityOnOrder = inventoryUpdate.quantityOnOrder;
+                    sharePointResultObject.QuantityOnOrderDate = inventoryUpdate.itemNextAvailabilityDate;
+                    sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
+                    sharePointResultObject.PartnerName = "Wayfair US";
+                    sharePointResultObject.Warehouse = inventoryUpdate.supplierId;
+                    sharePointResultObject.Content = inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Status = inventoryInputObject.status;
+                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + inventoryUpdate.supplierPartNumber +"_"+inventoryUpdate.supplierId;
+                }
                 else if(inventoryInputObject.CardCode =="CCAN000410")
                 {
                     SPS_CostcoLineItem sps_CostcoLineItem =  JsonConvert.DeserializeObject<SPS_CostcoLineItem>(inventoryInputObject.InventoryContent.ToString());
