@@ -174,7 +174,7 @@ namespace MHC.Function
                 }
                 else if(inventoryInputObject.CardCode =="CCAN000410")
                 {
-                    SPS_CostcoLineItem sps_CostcoLineItem =  JsonConvert.DeserializeObject<SPS_CostcoLineItem>(inventoryInputObject.InventoryContent.ToString());
+                    LineItem sps_CostcoLineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
                     sharePointResultObject.SKU= sps_CostcoLineItem.InventoryLine.VendorPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
                     sharePointResultObject.Atp = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.TotalQty??0;
