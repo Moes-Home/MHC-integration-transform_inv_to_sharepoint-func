@@ -49,7 +49,23 @@ namespace MHC.Function
                     sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
                     sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + lineItem.InventoryLine.VendorPartNumber;
-                } else if(inventoryInputObject.CardCode =="CUS002780")
+                } else if(inventoryInputObject.CardCode =="CUS002194-ATP")
+                {
+                    LineItem lineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU= lineItem.InventoryLine.VendorPartNumber;
+                    sharePointResultObject.CardCode = inventoryInputObject.CardCode;
+                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.TotalQty??0;
+                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.Dates.Date;
+                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.TotalQty??0;;
+                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.Dates.Date;
+                    sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
+                    sharePointResultObject.PartnerName = "SPS(LULU & GEORGIA INC)";
+                    sharePointResultObject.Warehouse = "";
+                    sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Status = inventoryInputObject.status;
+                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + lineItem.InventoryLine.VendorPartNumber;
+                }  
+                else if(inventoryInputObject.CardCode =="CUS002780")
                 {
                     LineItem lineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
                     sharePointResultObject.SKU= lineItem.InventoryLine.VendorPartNumber;
