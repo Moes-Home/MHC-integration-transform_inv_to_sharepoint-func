@@ -80,7 +80,7 @@ namespace MHC.Function
                     sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
                     sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + lineItem.InventoryLine.VendorPartNumber;
-                }
+                } 
                 else if(inventoryInputObject.CardCode =="CUS002780-ATP")
                 {
                     LineItem lineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
