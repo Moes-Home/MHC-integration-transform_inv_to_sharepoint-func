@@ -250,6 +250,21 @@ namespace MHC.Function
                     sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
                     sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + sps_CostcoLineItem.InventoryLine.VendorPartNumber;
+                } else if(inventoryInputObject.CardCode =="MOES-ATP")
+                {
+                    MoesATP moesATP =  JsonConvert.DeserializeObject<MoesATP>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU= moesATP.Sku;
+                    sharePointResultObject.CardCode = inventoryInputObject.CardCode;
+                    sharePointResultObject.Atp = moesATP.Quantities[0].Quantity;
+                    sharePointResultObject.AtpDate = moesATP.Quantities[0].date.Day.ToString("yyyy-MM-dd HH:mm:ss");
+                    sharePointResultObject.QuantityOnOrder = moesATP.Quantities[1].Quantity;
+                    sharePointResultObject.QuantityOnOrderDate = moesATP.Quantities[1].date.Day.ToString("yyyy-MM-dd HH:mm:ss");
+                    sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
+                    sharePointResultObject.PartnerName = "Moes-ATP";
+                    sharePointResultObject.Warehouse = moesATP.Warehouse;
+                    sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Status = inventoryInputObject.status;
+                    sharePointResultObject.FileName = moesATP.Warehouse + "_" + moesATP.Sku;
                 }
 
 
