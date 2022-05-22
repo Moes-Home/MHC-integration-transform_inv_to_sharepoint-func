@@ -259,7 +259,7 @@ namespace MHC.Function
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
                     sharePointResultObject.Atp = moesATP.Quantities[0].Quantity;
                     sharePointResultObject.AtpDate = moesATP.Quantities[0].date.ToString("yyyy-MM-dd HH:mm:ss");
-                    if (moesATP.Quantities[1] != null)
+                    if (moesATP.Quantities.Count >1)
                     {
                         sharePointResultObject.QuantityOnOrder = moesATP.Quantities[1].Quantity;
                         sharePointResultObject.QuantityOnOrderDate = moesATP.Quantities[1].date.ToString("yyyy-MM-dd HH:mm:ss");
