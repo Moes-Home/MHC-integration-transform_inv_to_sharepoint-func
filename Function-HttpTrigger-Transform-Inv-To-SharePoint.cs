@@ -260,7 +260,7 @@ namespace MHC.Function
                     sharePointResultObject.QuantityOnOrder = moesATP.Quantities[1].Quantity;
                     sharePointResultObject.QuantityOnOrderDate = moesATP.Quantities[1].date.ToString("yyyy-MM-dd HH:mm:ss");
                     sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
-                    sharePointResultObject.PartnerName = "Moes-ATP";
+                    sharePointResultObject.PartnerName = "MOES-ATP";
                     sharePointResultObject.Warehouse = moesATP.Warehouse;
                     sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
