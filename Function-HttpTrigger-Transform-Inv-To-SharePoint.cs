@@ -34,152 +34,153 @@ namespace MHC.Function
 
                 SharePointResultObject sharePointResultObject = new SharePointResultObject();
 
-                if(inventoryInputObject.CardCode =="CUS002194")
+                if (inventoryInputObject.CardCode == "CUS002194")
                 {
-                    LineItem lineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
-                    sharePointResultObject.SKU= lineItem.InventoryLine.VendorPartNumber;
+                    LineItem lineItem = JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU = lineItem.InventoryLine.VendorPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
-                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.TotalQty??0;
-                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.Dates.Date;
-                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.TotalQty??0;;
-                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.Dates.Date;
+                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.TotalQty ?? 0;
+                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.Dates.Date;
+                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.TotalQty ?? 0; ;
+                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.Dates.Date;
                     sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
                     sharePointResultObject.PartnerName = "SPS(LULU & GEORGIA INC)";
                     sharePointResultObject.Warehouse = "";
-                    sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
                     sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + lineItem.InventoryLine.VendorPartNumber;
-                } else if(inventoryInputObject.CardCode =="CUS002194-ATP")
+                }
+                else if (inventoryInputObject.CardCode == "CUS002194-ATP")
                 {
-                    LineItem lineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
-                    sharePointResultObject.SKU= lineItem.InventoryLine.VendorPartNumber;
+                    LineItem lineItem = JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU = lineItem.InventoryLine.VendorPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
-                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.TotalQty??0;
-                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.Dates.Date;
-                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.TotalQty??0;;
-                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.Dates.Date;
+                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.TotalQty ?? 0;
+                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.Dates.Date;
+                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.TotalQty ?? 0; ;
+                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.Dates.Date;
                     sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
                     sharePointResultObject.PartnerName = "SPS(LULU & GEORGIA INC)";
                     sharePointResultObject.Warehouse = "";
-                    sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
                     sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + lineItem.InventoryLine.VendorPartNumber;
                 }
-                else if(inventoryInputObject.CardCode =="CUS002780")
+                else if (inventoryInputObject.CardCode == "CUS002780")
                 {
-                    LineItem lineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
-                    sharePointResultObject.SKU= lineItem.InventoryLine.VendorPartNumber;
+                    LineItem lineItem = JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU = lineItem.InventoryLine.VendorPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
-                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.TotalQty??0;
-                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.Dates.Date;
-                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.TotalQty??0;;
-                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.Dates.Date;
+                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.TotalQty ?? 0;
+                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.Dates.Date;
+                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.TotalQty ?? 0; ;
+                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.Dates.Date;
                     sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
                     sharePointResultObject.PartnerName = "SPS_Rooms to Go";
                     sharePointResultObject.Warehouse = "";
-                    sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
-                    sharePointResultObject.Status = inventoryInputObject.status;
-                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + lineItem.InventoryLine.VendorPartNumber;
-                } 
-                else if(inventoryInputObject.CardCode =="CUS002780-ATP")
-                {
-                    LineItem lineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
-                    sharePointResultObject.SKU= lineItem.InventoryLine.VendorPartNumber;
-                    sharePointResultObject.CardCode = inventoryInputObject.CardCode;
-                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.TotalQty??0;
-                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.Dates.Date;
-                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.TotalQty??0;;
-                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.Dates.Date;
-                    sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
-                    sharePointResultObject.PartnerName = "SPS_Rooms to Go";
-                    sharePointResultObject.Warehouse = "";
-                    sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
                     sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + lineItem.InventoryLine.VendorPartNumber;
                 }
-                else if(inventoryInputObject.CardCode =="CUS002236")
+                else if (inventoryInputObject.CardCode == "CUS002780-ATP")
                 {
-                    LineItem lineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
-                    sharePointResultObject.SKU= lineItem.InventoryLine.VendorPartNumber;
+                    LineItem lineItem = JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU = lineItem.InventoryLine.VendorPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
-                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.TotalQty??0;
-                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.Dates.Date;
-                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.TotalQty??0;;
-                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.Dates.Date;
+                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.TotalQty ?? 0;
+                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.Dates.Date;
+                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.TotalQty ?? 0; ;
+                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.Dates.Date;
+                    sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
+                    sharePointResultObject.PartnerName = "SPS_Rooms to Go";
+                    sharePointResultObject.Warehouse = "";
+                    sharePointResultObject.Content = inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Status = inventoryInputObject.status;
+                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + lineItem.InventoryLine.VendorPartNumber;
+                }
+                else if (inventoryInputObject.CardCode == "CUS002236")
+                {
+                    LineItem lineItem = JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU = lineItem.InventoryLine.VendorPartNumber;
+                    sharePointResultObject.CardCode = inventoryInputObject.CardCode;
+                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.TotalQty ?? 0;
+                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.Dates.Date;
+                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.TotalQty ?? 0; ;
+                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.Dates.Date;
                     sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
                     sharePointResultObject.PartnerName = "SPS_Macy's";
                     sharePointResultObject.Warehouse = "";
-                    sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
                     sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + lineItem.InventoryLine.VendorPartNumber;
                 }
-                else if(inventoryInputObject.CardCode =="CUS003658")
+                else if (inventoryInputObject.CardCode == "CUS003658")
                 {
-                    LineItem lineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
-                    sharePointResultObject.SKU= lineItem.InventoryLine.VendorPartNumber;
+                    LineItem lineItem = JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU = lineItem.InventoryLine.VendorPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
-                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.TotalQty??0;
-                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.Dates.Date;
-                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.TotalQty??0;;
-                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.Dates.Date;
+                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.TotalQty ?? 0;
+                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.Dates.Date;
+                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.TotalQty ?? 0; ;
+                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.Dates.Date;
                     sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
                     sharePointResultObject.PartnerName = "SPS_WilliamsSonoma";
                     sharePointResultObject.Warehouse = "";
-                    sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
                     sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + lineItem.InventoryLine.VendorPartNumber;
                 }
-                 else if(inventoryInputObject.CardCode =="CUS003658-ATP")
+                else if (inventoryInputObject.CardCode == "CUS003658-ATP")
                 {
-                    LineItem lineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
-                    sharePointResultObject.SKU= lineItem.InventoryLine.VendorPartNumber;
+                    LineItem lineItem = JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU = lineItem.InventoryLine.VendorPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
-                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.TotalQty??0;
-                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.Dates.Date;
-                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.TotalQty??0;;
-                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.Dates.Date;
+                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.TotalQty ?? 0;
+                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.Dates.Date;
+                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.TotalQty ?? 0; ;
+                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.Dates.Date;
                     sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
                     sharePointResultObject.PartnerName = "SPS_WilliamsSonoma";
                     sharePointResultObject.Warehouse = "";
-                    sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
                     sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + lineItem.InventoryLine.VendorPartNumber;
                 }
-                else if(inventoryInputObject.CardCode =="CUS001607")
+                else if (inventoryInputObject.CardCode == "CUS001607")
                 {
-                    LineItem lineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
-                    sharePointResultObject.SKU= lineItem.InventoryLine.VendorPartNumber;
+                    LineItem lineItem = JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU = lineItem.InventoryLine.VendorPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
-                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.TotalQty??0;
-                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.Dates.Date;
-                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.TotalQty??0;;
-                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.Dates.Date;
+                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.TotalQty ?? 0;
+                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.Dates.Date;
+                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.TotalQty ?? 0; ;
+                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.Dates.Date;
                     sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
                     sharePointResultObject.PartnerName = "Houzz";
                     sharePointResultObject.Warehouse = "";
-                    sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
                     sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + lineItem.InventoryLine.VendorPartNumber;
                 }
-                else if(inventoryInputObject.CardCode =="CUS000389")
+                else if (inventoryInputObject.CardCode == "CUS000389")
                 {
-                    LineItem lineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
-                    sharePointResultObject.SKU= lineItem.InventoryLine.VendorPartNumber;
+                    LineItem lineItem = JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU = lineItem.InventoryLine.VendorPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
-                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.TotalQty??0;
-                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.Dates.Date;
-                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.TotalQty??0;;
-                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.Dates.Date;
+                    sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.TotalQty ?? 0;
+                    sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.Dates.Date;
+                    sharePointResultObject.QuantityOnOrder = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.TotalQty ?? 0; ;
+                    sharePointResultObject.QuantityOnOrderDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.Dates.Date;
                     sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
                     sharePointResultObject.PartnerName = "SPS_BisonOffice";
                     sharePointResultObject.Warehouse = "";
-                    sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
                     sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + lineItem.InventoryLine.VendorPartNumber;
                 }
-                else if(inventoryInputObject.CardCode =="CCAN000289")
+                else if (inventoryInputObject.CardCode == "CCAN000289")
                 {
-                    InventoryUpdate inventoryUpdate =  JsonConvert.DeserializeObject<InventoryUpdate>(inventoryInputObject.InventoryContent.ToString());
+                    InventoryUpdate inventoryUpdate = JsonConvert.DeserializeObject<InventoryUpdate>(inventoryInputObject.InventoryContent.ToString());
                     sharePointResultObject.SKU = inventoryUpdate.supplierPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
                     sharePointResultObject.Atp = inventoryUpdate.quantityOnHand;
@@ -189,11 +190,11 @@ namespace MHC.Function
                     sharePointResultObject.Warehouse = inventoryUpdate.supplierId;
                     sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
-                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + inventoryUpdate.supplierPartNumber +"_"+inventoryUpdate.supplierId;
+                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + inventoryUpdate.supplierPartNumber + "_" + inventoryUpdate.supplierId;
                 }
-                else if(inventoryInputObject.CardCode =="CUS003640")
+                else if (inventoryInputObject.CardCode == "CUS003640")
                 {
-                    InventoryUpdate inventoryUpdate =  JsonConvert.DeserializeObject<InventoryUpdate>(inventoryInputObject.InventoryContent.ToString());
+                    InventoryUpdate inventoryUpdate = JsonConvert.DeserializeObject<InventoryUpdate>(inventoryInputObject.InventoryContent.ToString());
                     sharePointResultObject.SKU = inventoryUpdate.supplierPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
                     sharePointResultObject.Atp = inventoryUpdate.quantityOnHand;
@@ -204,11 +205,11 @@ namespace MHC.Function
                     sharePointResultObject.Warehouse = inventoryUpdate.supplierId;
                     sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
-                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + inventoryUpdate.supplierPartNumber +"_"+inventoryUpdate.supplierId;
+                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + inventoryUpdate.supplierPartNumber + "_" + inventoryUpdate.supplierId;
                 }
-                else if(inventoryInputObject.CardCode =="CCAN000289-ATP")
+                else if (inventoryInputObject.CardCode == "CCAN000289-ATP")
                 {
-                    InventoryUpdate inventoryUpdate =  JsonConvert.DeserializeObject<InventoryUpdate>(inventoryInputObject.InventoryContent.ToString());
+                    InventoryUpdate inventoryUpdate = JsonConvert.DeserializeObject<InventoryUpdate>(inventoryInputObject.InventoryContent.ToString());
                     sharePointResultObject.SKU = inventoryUpdate.supplierPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
                     sharePointResultObject.Atp = inventoryUpdate.quantityOnHand;
@@ -218,11 +219,11 @@ namespace MHC.Function
                     sharePointResultObject.Warehouse = inventoryUpdate.supplierId;
                     sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
-                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + inventoryUpdate.supplierPartNumber +"_"+inventoryUpdate.supplierId;
+                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + inventoryUpdate.supplierPartNumber + "_" + inventoryUpdate.supplierId;
                 }
-                else if(inventoryInputObject.CardCode =="CUS003640-ATP")
+                else if (inventoryInputObject.CardCode == "CUS003640-ATP")
                 {
-                    InventoryUpdate inventoryUpdate =  JsonConvert.DeserializeObject<InventoryUpdate>(inventoryInputObject.InventoryContent.ToString());
+                    InventoryUpdate inventoryUpdate = JsonConvert.DeserializeObject<InventoryUpdate>(inventoryInputObject.InventoryContent.ToString());
                     sharePointResultObject.SKU = inventoryUpdate.supplierPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
                     sharePointResultObject.Atp = inventoryUpdate.quantityOnHand;
@@ -233,36 +234,40 @@ namespace MHC.Function
                     sharePointResultObject.Warehouse = inventoryUpdate.supplierId;
                     sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
-                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + inventoryUpdate.supplierPartNumber +"_"+inventoryUpdate.supplierId;
+                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + inventoryUpdate.supplierPartNumber + "_" + inventoryUpdate.supplierId;
                 }
-                else if(inventoryInputObject.CardCode =="CCAN000410")
+                else if (inventoryInputObject.CardCode == "CCAN000410")
                 {
-                    LineItem sps_CostcoLineItem =  JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
-                    sharePointResultObject.SKU= sps_CostcoLineItem.InventoryLine.VendorPartNumber;
+                    LineItem sps_CostcoLineItem = JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU = sps_CostcoLineItem.InventoryLine.VendorPartNumber;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
-                    sharePointResultObject.Atp = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.TotalQty??0;
-                    sharePointResultObject.AtpDate = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="33")?.Dates.Date;
-                    sharePointResultObject.QuantityOnOrder = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.TotalQty??0;;
-                    sharePointResultObject.QuantityOnOrderDate = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x=>x.QuantityQualifier=="29")?.Dates.Date;
+                    sharePointResultObject.Atp = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.TotalQty ?? 0;
+                    sharePointResultObject.AtpDate = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.Dates.Date;
+                    sharePointResultObject.QuantityOnOrder = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.TotalQty ?? 0; ;
+                    sharePointResultObject.QuantityOnOrderDate = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.Dates.Date;
                     sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
                     sharePointResultObject.PartnerName = "SPS(COSTCO HOME)";
                     sharePointResultObject.Warehouse = "";
-                    sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
                     sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + sps_CostcoLineItem.InventoryLine.VendorPartNumber;
-                } else if(inventoryInputObject.CardCode =="MOES-ATP")
+                }
+                else if (inventoryInputObject.CardCode == "MOES-ATP")
                 {
-                    MoesATP moesATP =  JsonConvert.DeserializeObject<MoesATP>(inventoryInputObject.InventoryContent.ToString());
-                    sharePointResultObject.SKU= moesATP.Sku;
+                    MoesATP moesATP = JsonConvert.DeserializeObject<MoesATP>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU = moesATP.Sku;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
                     sharePointResultObject.Atp = moesATP.Quantities[0].Quantity;
                     sharePointResultObject.AtpDate = moesATP.Quantities[0].date.ToString("yyyy-MM-dd HH:mm:ss");
-                    sharePointResultObject.QuantityOnOrder = moesATP.Quantities[1].Quantity;
-                    sharePointResultObject.QuantityOnOrderDate = moesATP.Quantities[1].date.ToString("yyyy-MM-dd HH:mm:ss");
+                    if (moesATP.Quantities[1] != null)
+                    {
+                        sharePointResultObject.QuantityOnOrder = moesATP.Quantities[1].Quantity;
+                        sharePointResultObject.QuantityOnOrderDate = moesATP.Quantities[1].date.ToString("yyyy-MM-dd HH:mm:ss");
+                    }
                     sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
                     sharePointResultObject.PartnerName = "MOES-ATP";
                     sharePointResultObject.Warehouse = moesATP.Warehouse;
-                    sharePointResultObject.Content =   inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
                     sharePointResultObject.FileName = moesATP.Warehouse + "_" + moesATP.Sku;
                 }
