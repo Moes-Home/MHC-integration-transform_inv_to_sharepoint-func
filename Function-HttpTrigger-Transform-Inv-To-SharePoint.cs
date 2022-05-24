@@ -283,6 +283,21 @@ namespace MHC.Function
                     sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
                     sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + sps_CostcoLineItem.InventoryLine.VendorPartNumber;
+                } else if (inventoryInputObject.CardCode == "CCAN000410-ATP")
+                {
+                    LineItem sps_CostcoLineItem = JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
+                    sharePointResultObject.SKU = sps_CostcoLineItem.InventoryLine.VendorPartNumber;
+                    sharePointResultObject.CardCode = inventoryInputObject.CardCode;
+                    sharePointResultObject.Atp = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.TotalQty ?? 0;
+                    sharePointResultObject.AtpDate = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.Dates.Date;
+                    sharePointResultObject.QuantityOnOrder = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.TotalQty ?? 0; ;
+                    sharePointResultObject.QuantityOnOrderDate = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "29")?.Dates.Date;
+                    sharePointResultObject.DeliveryMode = inventoryInputObject.DeliveryMode;
+                    sharePointResultObject.PartnerName = "SPS(COSTCO HOME)";
+                    sharePointResultObject.Warehouse = "";
+                    sharePointResultObject.Content = inventoryInputObject.InventoryContent;
+                    sharePointResultObject.Status = inventoryInputObject.status;
+                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + sps_CostcoLineItem.InventoryLine.VendorPartNumber;
                 }
                 else if (inventoryInputObject.CardCode == "MOES-ATP")
                 {
