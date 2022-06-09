@@ -133,7 +133,7 @@ namespace MHC.Function
                 else if (inventoryInputObject.CardCode == "CUS003658-ATP")
                 {
                     LineItem lineItem = JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
-                    sharePointResultObject.SKU = lineItem.InventoryLine.VendorPartNumber;
+                    sharePointResultObject.SKU = lineItem.id;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
                     sharePointResultObject.Atp = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.TotalQty ?? 0;
                     sharePointResultObject.AtpDate = lineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.Dates.Date;
