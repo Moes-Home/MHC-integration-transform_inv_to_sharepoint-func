@@ -144,7 +144,7 @@ namespace MHC.Function
                     sharePointResultObject.Warehouse = "";
                     sharePointResultObject.Content = inventoryInputObject.InventoryContent;
                     sharePointResultObject.Status = inventoryInputObject.status;
-                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + lineItem.InventoryLine.VendorPartNumber;
+                    sharePointResultObject.FileName = inventoryInputObject.CardCode + "_" + lineItem.id;
                 }
                  else if (inventoryInputObject.CardCode == "CUS002317")
                 {
