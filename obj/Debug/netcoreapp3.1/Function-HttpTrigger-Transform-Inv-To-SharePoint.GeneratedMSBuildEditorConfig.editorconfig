@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = Function_HttpTrigger_Transform_Inv_To_SharePoint
+build_property.ProjectDir = c:\DriveD\MoesSource\MHC-integration-inv-to-sharepoint-transform-func\MHC-integration-transform_inv_to_sharepoint-func\

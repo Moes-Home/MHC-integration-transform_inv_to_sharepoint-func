@@ -318,7 +318,7 @@ namespace MHC.Function
                 } else if (inventoryInputObject.CardCode == "CCAN000410-ATP")
                 {
                     LineItem sps_CostcoLineItem = JsonConvert.DeserializeObject<LineItem>(inventoryInputObject.InventoryContent.ToString());
-                    sharePointResultObject.SKU = sps_CostcoLineItem.InventoryLine.VendorPartNumber;
+                    sharePointResultObject.SKU = sps_CostcoLineItem.id;
                     sharePointResultObject.CardCode = inventoryInputObject.CardCode;
                     sharePointResultObject.Atp = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.TotalQty ?? 0;
                     sharePointResultObject.AtpDate = sps_CostcoLineItem.QuantitiesSchedulesLocations.Find(x => x.QuantityQualifier == "33")?.Dates.Date;
